@@ -1,0 +1,8 @@
+/* Small grey text, e.g. the data sources at the bottom of a panel. */
+.small-print {
+  margin: 0;
+  padding: 0 var(--space-16);
+  font-size: var(--font-size-fine);
+  line-height: 15px;
+  color: var(--text-muted);
+}

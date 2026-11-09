@@ -1,0 +1,81 @@
+/* Panel message (Figma: Panel message, variants Default, Alert, Error and Success; plus Loading).
+   <div class="panel-message panel-message--success">
+     <img class="panel-message__icon" src=".../icons/success.svg" alt="">
+     <p class="panel-message__text">Data successfully loaded</p>
+   </div>
+   Icons: default info.svg, loading spinner.svg, warning alert-warning.svg, error alert-error.svg,
+   success success.svg. */
+.panel-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: 0 var(--space-16);
+  padding: var(--space-8);
+  /* Two lines of text, so switching between one- and two-line messages doesn't resize the panel. */
+  min-height: 42px;
+  border: 1px solid var(--message-border);
+  border-radius: var(--radius-small);
+  background: var(--message-bg);
+  color: var(--message-text);
+}
+
+.panel-message[hidden] {
+  display: none;
+}
+
+.panel-message__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.panel-message__text {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: 12px;
+}
+
+.panel-message--default,
+.panel-message--loading {
+  --message-bg: var(--blue-light);
+  --message-border: var(--blue-mid);
+  --message-text: var(--blue-dark);
+}
+
+/* Figma calls this variant "Alert". */
+.panel-message--warning {
+  --message-bg: var(--yellow-light);
+  --message-border: var(--golden);
+  --message-text: var(--earth-red);
+}
+
+.panel-message--error {
+  --message-bg: var(--red-light);
+  --message-border: var(--earth-red);
+  --message-text: var(--earth-red);
+}
+
+.panel-message--success {
+  --message-bg: var(--green-light);
+  --message-border: var(--pasture-green);
+  --message-text: var(--paddock-green);
+}
+
+/* Loading turns the spinner.svg icon. */
+.panel-message--loading .panel-message__icon {
+  animation: geeta-spin 0.9s linear infinite;
+}
+
+@keyframes geeta-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-message--loading .panel-message__icon {
+    animation: none;
+  }
+}

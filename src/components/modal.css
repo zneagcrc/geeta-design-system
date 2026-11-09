@@ -1,0 +1,21 @@
+/* Modal: a native <dialog class="panel modal"> opened with showModal(). */
+.modal {
+  width: 400px;
+  max-width: calc(100% - 32px);
+  padding: 0;
+  border: 0;
+  color: var(--text-strong);
+}
+
+/* .panel sets display: flex, which would otherwise show the dialog while it's closed. */
+.modal:not([open]) {
+  display: none;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.modal .panel__body {
+  padding-bottom: 24px;
+}

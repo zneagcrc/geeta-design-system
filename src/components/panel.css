@@ -1,0 +1,90 @@
+/* Panel (Figma: Panel, Panel header, Panel subheader, Panel content holder). */
+.panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--fleece-white);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-8) var(--space-16);
+  background: var(--surface-white);
+  flex-shrink: 0;
+}
+
+.panel__title {
+  flex: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-panel-title);
+  font-weight: 400;
+  line-height: normal;
+  color: var(--paddock-green);
+}
+
+/* Icon button in the header: the collapse toggle or a close button. */
+.panel__toggle,
+.panel__close {
+  display: flex;
+  padding: var(--space-4);
+  margin: calc(-1 * var(--space-4));
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.panel__toggle img {
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.panel--collapsed .panel__body {
+  display: none;
+}
+
+/* The toggle shows chevron-up.svg; when the panel is collapsed it's turned to point down. */
+.panel--collapsed .panel__toggle img {
+  transform: rotate(180deg);
+}
+
+.panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-16) 0;
+  overflow-y: auto;
+}
+
+.panel__body > [hidden] {
+  display: none;
+}
+
+.panel__subheader {
+  margin: 0 var(--space-16);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-rule);
+  font-family: var(--font-display);
+  font-size: var(--font-size-section);
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--text-strong);
+}
+
+/* Panel content holder: 16px side insets that line content up with the subheaders. */
+.panel__content {
+  padding: 0 var(--space-16);
+}
+
+/* A plain grey paragraph in a panel. */
+.panel__text {
+  margin: 0;
+  padding: 0 var(--space-16);
+  font-size: var(--font-size-data);
+  line-height: 20px;
+  color: var(--text-muted);
+}

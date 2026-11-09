@@ -1,0 +1,34 @@
+{
+  "name": "@zneagcrc/geeta-design-system",
+  "version": "0.1.0",
+  "description": "Shared fonts, colours, tokens and components for geeta tools.",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/geeta.css",
+    "./geeta.css": "./dist/geeta.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./base.css": "./dist/base.css",
+    "./components.css": "./dist/components.css",
+    "./tokens.scss": "./dist/tokens.scss",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./icons/*": "./dist/icons/*",
+    "./fonts/*": "./dist/fonts/*",
+    "./brand/*": "./dist/brand/*"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs && git diff --exit-code -- dist",
+    "reference": "vite --open /reference/"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

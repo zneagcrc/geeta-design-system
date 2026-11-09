@@ -1,0 +1,39 @@
+/* Button group: a segmented choice. Mark the chosen button with .is-selected and aria-pressed="true". */
+.button-group {
+  display: flex;
+  border: 1px solid var(--paddock-green);
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.button-group button {
+  flex: 1;
+  padding: var(--space-8);
+  border: 0;
+  border-right: 1px solid var(--paddock-green);
+  background: var(--fleece-white);
+  color: var(--paddock-green);
+  font-family: var(--font-display);
+  font-size: var(--font-size-control);
+  line-height: 14px;
+  cursor: pointer;
+}
+
+.button-group button:last-child {
+  border-right: 0;
+}
+
+.button-group button:hover:not(.is-selected) {
+  background: var(--hover-tint);
+}
+
+.button-group button.is-selected {
+  background: var(--paddock-green);
+  color: var(--fleece-white);
+  cursor: default;
+}
+
+.button-group button:focus-visible {
+  outline: 2px solid var(--blue-mid);
+  outline-offset: -3px;
+}

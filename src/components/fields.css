@@ -1,0 +1,101 @@
+/* Form fields (Figma: Select box, Input field, Date picker field).
+   Default: label above the control. Add the --inline modifier to put them on one row. */
+.select-box,
+.input-field,
+.date-picker-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.select-box--inline,
+.input-field--inline,
+.date-picker-field--inline {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.select-box label,
+.input-field label,
+.date-picker-field label {
+  font-size: var(--font-size-data);
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--text-strong);
+}
+
+.select-box select,
+.input-field input,
+.date-picker-field input {
+  height: 44px;
+  padding: 0 var(--space-12);
+  border: 1px solid var(--border-field);
+  border-radius: var(--radius-field);
+  background-color: var(--surface-white);
+  font-family: var(--font-body);
+  font-size: var(--font-size-data);
+  line-height: 20px;
+  color: var(--text-strong);
+}
+
+.select-box select:focus-visible,
+.input-field input:focus-visible,
+.date-picker-field input:focus-visible {
+  outline: 2px solid var(--blue-mid);
+  outline-offset: 1px;
+}
+
+.input-field input::placeholder,
+.date-picker-field input::placeholder {
+  color: var(--text-muted);
+}
+
+.select-box select {
+  padding-right: 40px;
+  background: var(--surface-white) url('./icons/chevron-down.svg') no-repeat right var(--space-12) center;
+  color: var(--text-muted);
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Native date input, with the design system's calendar icon (Chromium and Edge). */
+.date-picker-field input::-webkit-calendar-picker-indicator {
+  width: 16px;
+  height: 16px;
+  background: url('./icons/calendar.svg') no-repeat center;
+  cursor: pointer;
+}
+
+/* File field: label above a native file input with a green button. */
+.file-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.file-field label {
+  font-size: var(--font-size-data);
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.file-field input[type='file'] {
+  font-family: var(--font-body);
+  font-size: var(--font-size-data);
+  color: var(--text-muted);
+}
+
+.file-field input[type='file']::file-selector-button {
+  margin-right: var(--space-12);
+  padding: var(--space-8) var(--space-12);
+  border: 1px solid var(--paddock-green);
+  border-radius: var(--radius-small);
+  background: var(--paddock-green);
+  color: var(--fleece-white);
+  font-family: var(--font-display);
+  font-size: var(--font-size-control);
+  line-height: 14px;
+  cursor: pointer;
+}

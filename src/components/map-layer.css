@@ -1,0 +1,45 @@
+/* Map layer (Figma: Map Controls/Map layer, Map layer text, Panel menu).
+   A button with aria-pressed; swap its icon between visibility-on.svg and visibility-off.svg. */
+.layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: 0 var(--space-16);
+}
+
+.map-layer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.map-layer img {
+  flex-shrink: 0;
+}
+
+.map-layer[aria-pressed='false'] .map-layer__name {
+  color: var(--text-muted);
+}
+
+.map-layer__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.map-layer__name {
+  font-size: var(--font-size-data);
+  font-weight: 700;
+  line-height: 14px;
+  color: var(--text-strong);
+}
+
+.map-layer__description {
+  font-size: var(--font-size-small);
+  color: var(--text-muted);
+}

@@ -1,0 +1,31 @@
+/* Data list and data point: bold label on the left, grey value on the right. */
+.data-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: 0 var(--space-16) var(--space-16);
+}
+
+.data-list:empty {
+  display: none;
+}
+
+.data-point {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-16);
+  font-size: var(--font-size-data);
+  line-height: 14px;
+}
+
+.data-point__label {
+  font-weight: 700;
+  color: var(--text-strong);
+  white-space: nowrap;
+}
+
+.data-point__value {
+  color: var(--text-muted);
+  text-align: right;
+}

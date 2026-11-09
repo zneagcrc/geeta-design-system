@@ -1,0 +1,38 @@
+/* Top bar: tool brand on the left, organisation logo on the right. */
+.top-bar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-16);
+  background: var(--surface-white);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--harvest-green);
+  text-decoration: none;
+}
+
+/* The tool's own logo (pinpoint pin, FullCAM tree...). */
+.brand__logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: var(--font-size-brand);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.brand__name strong {
+  font-weight: 800;
+}
+
+.top-bar__org-logo {
+  display: block;
+}

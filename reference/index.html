@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geeta design system</title>
+    <link rel="stylesheet" href="../dist/geeta.css" />
+    <style>
+      /* Layout for this reference page only; not part of the design system. */
+      body { background: #f8f8f6; }
+      .ref { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
+      .ref h1 { margin: 32px 0 8px; font-family: var(--font-display); font-weight: 400; font-size: 36px; color: var(--harvest-green); }
+      .ref > h2 { margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-rule); font-family: var(--font-display); font-weight: 400; font-size: 24px; color: var(--harvest-green); }
+      .card > h3, .grid > div > h3 { margin: 0 0 12px; font-size: 14px; color: var(--text-strong); }
+      .ref p.lead { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 20px; max-width: 720px; }
+      .ref code { font-size: 12px; color: var(--paddock-green); }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+      .card { padding: 20px; background: #fff; border: 1px solid var(--border-divider); border-radius: 4px; }
+      .card .note { margin: 12px 0 0; font-size: 12px; line-height: 16px; color: var(--text-muted); }
+      .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+      .swatch__chip { height: 56px; border: 1px solid var(--border-divider); border-radius: 4px; }
+      .swatch__name { margin-top: 8px; font-size: 13px; font-weight: 700; }
+      .swatch__meta { font-size: 12px; color: var(--text-muted); }
+      .type-row { display: flex; align-items: baseline; gap: 24px; padding: 12px 0; border-bottom: 1px solid var(--border-divider); }
+      .type-row__meta { width: 200px; flex-shrink: 0; font-size: 12px; color: var(--text-muted); }
+      .scale { display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+      .scale__item { font-size: 12px; color: var(--text-muted); text-align: center; }
+      .scale__box { background: var(--paddock-green); margin: 0 auto 6px; }
+      .radius-box { width: 96px; height: 48px; border: 1px solid var(--paddock-green); background: var(--fleece-white); margin-bottom: 6px; }
+      .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+      .icon-cell { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #fff; border: 1px solid var(--border-divider); border-radius: 4px; font-size: 12px; color: var(--text-muted); }
+      .stack { display: flex; flex-direction: column; gap: 12px; }
+      .stack .panel-message { margin: 0; }
+      .panel-demo { width: 360px; max-width: 100%; }
+    </style>
+  </head>
+  <body>
+    <header class="top-bar">
+      <a class="brand" href="#">
+        <span class="brand__name"><strong>geeta</strong> design system</span>
+      </a>
+      <img class="top-bar__org-logo" src="../dist/brand/zneag-logo.png" width="81" height="25" alt="zneag" />
+    </header>
+
+    <main class="ref">
+      <h1>geeta design system</h1>
+      <p class="lead">
+        Fonts, colours and components shared by every geeta tool. Figma is the source of truth: colour
+        names match the Figma variables and class names match the Figma components. Everything on this
+        page uses <code>dist/geeta.css</code> as a tool would.
+      </p>
+
+      <h2>Colours</h2>
+      <div class="swatches" id="swatches"></div>
+
+      <h2>Typography</h2>
+      <div class="card">
+        <div class="type-row"><span class="type-row__meta">Brand heading · JUST Sans 24</span><span class="brand__name"><strong>pin</strong>point for geeta</span></div>
+        <div class="type-row"><span class="type-row__meta">Panel title · JUST Sans 22</span><h2 class="panel__title">Location data</h2></div>
+        <div class="type-row"><span class="type-row__meta">Section heading · JUST Sans 16</span><span style="font-family:var(--font-display);font-size:var(--font-size-section)">Climate data</span></div>
+        <div class="type-row"><span class="type-row__meta">Control label · JUST Sans 14</span><span style="font-family:var(--font-display);font-size:var(--font-size-control)">5 year averages</span></div>
+        <div class="type-row"><span class="type-row__meta">Data label / value · Arial 14</span><span style="font-size:var(--font-size-data)"><b>Total rainfall</b>&nbsp; 511.5 mm</span></div>
+        <div class="type-row"><span class="type-row__meta">Supporting text · Arial 12</span><span style="font-size:var(--font-size-small)">Only visible at map zoom level 5 or less</span></div>
+        <div class="type-row"><span class="type-row__meta">Small print · Arial 11</span><span style="font-size:var(--font-size-fine);color:var(--text-muted)">Data sources: climate data from SILO (Queensland Government).</span></div>
+      </div>
+
+      <h2>Spacing and corner radii</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Spacing <code>--space-*</code></h3>
+          <div class="scale">
+            <div class="scale__item"><div class="scale__box" style="width:4px;height:4px"></div>4</div>
+            <div class="scale__item"><div class="scale__box" style="width:8px;height:8px"></div>8</div>
+            <div class="scale__item"><div class="scale__box" style="width:10px;height:10px"></div>10</div>
+            <div class="scale__item"><div class="scale__box" style="width:12px;height:12px"></div>12</div>
+            <div class="scale__item"><div class="scale__box" style="width:16px;height:16px"></div>16</div>
+            <div class="scale__item"><div class="scale__box" style="width:32px;height:32px"></div>32</div>
+          </div>
+          <p class="note">4 icon gap · 8 row gap and message inset · 10 internal gap · 12 menu gap and field inset · 16 panel gutter · 32 panel base inset.</p>
+        </div>
+        <div class="card">
+          <h3>Corner radii <code>--radius-*</code></h3>
+          <div class="scale">
+            <div class="scale__item"><div class="radius-box" style="border-radius:var(--radius-small)"></div>small · 4</div>
+            <div class="scale__item"><div class="radius-box" style="border-radius:var(--radius-field)"></div>field · 6</div>
+            <div class="scale__item"><div class="radius-box" style="border-radius:var(--radius-panel)"></div>panel · 8</div>
+          </div>
+          <p class="note">Small for messages and button groups, field for form fields, panel for floating panels.</p>
+        </div>
+      </div>
+
+      <h2>Controls</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Button group <code>.button-group</code></h3>
+          <div class="button-group" role="group" aria-label="Climate data period">
+            <button type="button" class="is-selected" aria-pressed="true">5 year averages</button>
+            <button type="button" aria-pressed="false">Single year</button>
+          </div>
+          <p class="note">Mark the chosen button with <code>.is-selected</code> and <code>aria-pressed="true"</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Select box <code>.select-box</code></h3>
+          <div class="select-box">
+            <label for="ref-select">Category</label>
+            <select id="ref-select"><option>Select an option</option><option>Beef cattle</option></select>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Select box, inline <code>.select-box--inline</code></h3>
+          <div class="select-box select-box--inline">
+            <label for="ref-select-inline">Year range</label>
+            <select id="ref-select-inline"><option>2020–2024</option><option>2019–2023</option></select>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Input field <code>.input-field</code></h3>
+          <div class="input-field">
+            <label for="ref-input">Label</label>
+            <input id="ref-input" type="text" placeholder="Enter text" />
+          </div>
+        </div>
+        <div class="card">
+          <h3>Date picker field <code>.date-picker-field</code></h3>
+          <div class="date-picker-field">
+            <label for="ref-date">Date</label>
+            <input id="ref-date" type="date" />
+          </div>
+        </div>
+        <div class="card">
+          <h3>File field <code>.file-field</code></h3>
+          <div class="file-field">
+            <label for="ref-file">KML/KMZ file</label>
+            <input id="ref-file" type="file" />
+          </div>
+        </div>
+      </div>
+
+      <h2>Panel messages <code>.panel-message--*</code></h2>
+      <div class="card stack">
+        <div class="panel-message panel-message--default"><img class="panel-message__icon" src="../dist/icons/info.svg" alt="" /><p class="panel-message__text">Add a point or polygon to the map to get location and weather information</p></div>
+        <div class="panel-message panel-message--loading"><img class="panel-message__icon" src="../dist/icons/spinner.svg" alt="" /><p class="panel-message__text">Fetching data...</p></div>
+        <div class="panel-message panel-message--warning"><img class="panel-message__icon" src="../dist/icons/alert-warning.svg" alt="" /><p class="panel-message__text">Some data couldn't be loaded: SA2 region.</p></div>
+        <div class="panel-message panel-message--error"><img class="panel-message__icon" src="../dist/icons/alert-error.svg" alt="" /><p class="panel-message__text">That file isn't a valid KML or KMZ file.</p></div>
+        <div class="panel-message panel-message--success"><img class="panel-message__icon" src="../dist/icons/success.svg" alt="" /><p class="panel-message__text">Data successfully loaded</p></div>
+      </div>
+
+      <h2>Panels and data</h2>
+      <div class="grid">
+        <div>
+          <h3>Panel with data list</h3>
+          <section class="panel panel-demo">
+            <div class="panel__header">
+              <h2 class="panel__title">Location data</h2>
+              <button type="button" class="panel__toggle" aria-expanded="true" aria-label="Collapse location data"><img src="../dist/icons/chevron-up.svg" width="16" height="16" alt="" /></button>
+            </div>
+            <div class="panel__body">
+              <div class="panel-message panel-message--success"><img class="panel-message__icon" src="../dist/icons/success.svg" alt="" /><p class="panel-message__text">Data successfully loaded</p></div>
+              <h3 class="panel__subheader">Geographic data</h3>
+              <div class="data-list">
+                <div class="data-point"><span class="data-point__label">Latitude</span><span class="data-point__value">-34.303249</span></div>
+                <div class="data-point"><span class="data-point__label">Longitude</span><span class="data-point__value">149.123456</span></div>
+                <div class="data-point"><span class="data-point__label">Elevation</span><span class="data-point__value">612 m</span></div>
+              </div>
+              <p class="small-print">Data sources: elevation from Mapbox; climate data from SILO (Queensland Government).</p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <h3>Panel with map layers</h3>
+          <section class="panel panel-demo">
+            <div class="panel__header">
+              <h2 class="panel__title">Map layers</h2>
+              <button type="button" class="panel__toggle" aria-expanded="true" aria-label="Collapse map layers"><img src="../dist/icons/chevron-up.svg" width="16" height="16" alt="" /></button>
+            </div>
+            <div class="panel__body">
+              <p class="panel__text">Current map zoom level: 4.0</p>
+              <div class="layer-list">
+                <button type="button" class="map-layer" aria-pressed="true"><img src="../dist/icons/visibility-on.svg" width="16" height="16" alt="" /><span class="map-layer__text"><span class="map-layer__name">Leaching zone</span><span class="map-layer__description">Only visible at map zoom level 5 or less</span></span></button>
+                <button type="button" class="map-layer" aria-pressed="false"><img src="../dist/icons/visibility-off.svg" width="16" height="16" alt="" /><span class="map-layer__text"><span class="map-layer__name">SA2 regions</span><span class="map-layer__description">ABS Statistical Area 2 regions</span></span></button>
+              </div>
+              <h3 class="panel__subheader">Base layer</h3>
+              <div class="panel__content">
+                <div class="button-group" role="group" aria-label="Base layer">
+                  <button type="button" aria-pressed="false">Satellite</button>
+                  <button type="button" class="is-selected" aria-pressed="true">Street</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div>
+          <h3>Collapsed panel <code>.panel--collapsed</code></h3>
+          <section class="panel panel-demo panel--collapsed">
+            <div class="panel__header">
+              <h2 class="panel__title">Map layers</h2>
+              <button type="button" class="panel__toggle" aria-expanded="false" aria-label="Expand map layers"><img src="../dist/icons/chevron-up.svg" width="16" height="16" alt="" /></button>
+            </div>
+            <div class="panel__body"></div>
+          </section>
+        </div>
+      </div>
+
+      <h2>Icons <code>dist/icons/</code></h2>
+      <div class="icons" id="icons"></div>
+    </main>
+
+    <script type="module">
+      import tokens from '../dist/tokens.js';
+
+      // Colour swatches straight from the tokens, so this page can't drift from them.
+      const swatches = document.getElementById('swatches');
+      const names = { ...tokens.color, ...tokens.neutral };
+      for (const [name, value] of Object.entries(names)) {
+        const label = name.replace(/[A-Z]/g, (c) => ' ' + c.toLowerCase());
+        const cssName = '--' + name.replace(/[A-Z]/g, (c) => '-' + c.toLowerCase());
+        swatches.insertAdjacentHTML('beforeend',
+          `<div><div class="swatch__chip" style="background:${value}"></div>` +
+          `<div class="swatch__name">${label[0].toUpperCase() + label.slice(1)}</div>` +
+          `<div class="swatch__meta">${value} · <code>${cssName}</code></div></div>`);
+      }
+
+      const icons = ['info', 'spinner', 'alert-warning', 'alert-error', 'success', 'visibility-on',
+        'visibility-off', 'chevron-up', 'chevron-down', 'chevron-down-green', 'close', 'upload', 'calendar'];
+      document.getElementById('icons').innerHTML = icons
+        .map((name) => `<div class="icon-cell"><img src="../dist/icons/${name}.svg" width="16" height="16" alt="" />${name}.svg</div>`)
+        .join('');
+
+      // Make the demo controls behave.
+      document.querySelectorAll('.button-group').forEach((group) => group.addEventListener('click', (e) => {
+        const button = e.target.closest('button');
+        if (!button) return;
+        group.querySelectorAll('button').forEach((b) => {
+          b.classList.toggle('is-selected', b === button);
+          b.setAttribute('aria-pressed', String(b === button));
+        });
+      }));
+      document.querySelectorAll('.map-layer').forEach((layer) => layer.addEventListener('click', () => {
+        const on = layer.getAttribute('aria-pressed') !== 'true';
+        layer.setAttribute('aria-pressed', String(on));
+        layer.querySelector('img').src = `../dist/icons/visibility-${on ? 'on' : 'off'}.svg`;
+      }));
+    </script>
+  </body>
+</html>
