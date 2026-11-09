@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-16);
-  background: var(--surface-white);
+  background: var(--surface-field);
 }
 
 .brand {

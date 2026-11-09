@@ -21,11 +21,11 @@
 
 .data-point__label {
   font-weight: 700;
-  color: var(--text-strong);
+  color: var(--text-primary);
   white-space: nowrap;
 }
 
 .data-point__value {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-align: right;
 }

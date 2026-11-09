@@ -1,11 +1,20 @@
-/* Form fields (Figma: Select box, Input field, Date picker field).
-   Default: label above the control. Add the --inline modifier to put them on one row. */
+/* Form fields (Figma: Forms/Inputs/Select box, Input field, Date picker field; Form/Inputs/Button group).
+   Default: label, control, then optional description and error text, 6px apart.
+   <div class="input-field input-field--error">
+     <label for="site-name">Site name</label>
+     <input id="site-name" type="text" aria-invalid="true" aria-describedby="site-name-desc site-name-error">
+     <p class="field-description" id="site-name-desc">As it appears on the title</p>
+     <p class="field-error" id="site-name-error">Enter a site name</p>
+   </div>
+   States: --error on the field, or aria-invalid="true" on the control (Figma: Error);
+   readonly on the input (Figma: Read only), plus --read-only on the field to italicise the description.
+   Add the --inline modifier to put the label and control on one row. */
 .select-box,
 .input-field,
 .date-picker-field {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: 6px;
 }
 
 .select-box--inline,
@@ -19,11 +28,12 @@
 
 .select-box label,
 .input-field label,
-.date-picker-field label {
+.date-picker-field label,
+.button-group-field__label {
   font-size: var(--font-size-data);
   font-weight: 700;
   line-height: 20px;
-  color: var(--text-strong);
+  color: var(--text-primary);
 }
 
 .select-box select,
@@ -31,13 +41,13 @@
 .date-picker-field input {
   height: 44px;
   padding: 0 var(--space-12);
-  border: 1px solid var(--border-field);
+  border: 1px solid var(--neutral-mid);
   border-radius: var(--radius-field);
-  background-color: var(--surface-white);
+  background-color: var(--surface-field);
   font-family: var(--font-body);
   font-size: var(--font-size-data);
   line-height: 20px;
-  color: var(--text-strong);
+  color: var(--text-primary);
 }
 
 .select-box select:focus-visible,
@@ -49,13 +59,13 @@
 
 .input-field input::placeholder,
 .date-picker-field input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .select-box select {
   padding-right: 40px;
-  background: var(--surface-white) url('./icons/chevron-down.svg') no-repeat right var(--space-12) center;
-  color: var(--text-muted);
+  background: var(--surface-field) url('./icons/chevron-down.svg') no-repeat right var(--space-12) center;
+  color: var(--text-secondary);
   appearance: none;
   cursor: pointer;
 }
@@ -66,6 +76,61 @@
   height: 16px;
   background: url('./icons/calendar.svg') no-repeat center;
   cursor: pointer;
+}
+
+/* Description and error text below the control. */
+.field-description,
+.field-error {
+  margin: 0;
+  font-size: var(--font-size-paragraph);
+  line-height: 20px;
+}
+
+.field-description {
+  color: var(--text-secondary);
+}
+
+.field-error {
+  color: var(--status-error);
+}
+
+/* Error state. */
+.select-box--error select,
+.input-field--error input,
+.date-picker-field--error input,
+.select-box select[aria-invalid='true'],
+.input-field input[aria-invalid='true'],
+.date-picker-field input[aria-invalid='true'] {
+  border-color: var(--status-error);
+}
+
+/* Read-only state: grey and italic, and the date input loses its calendar button. */
+.input-field input[readonly],
+.date-picker-field input[readonly] {
+  background-color: var(--neutral-light);
+  color: var(--neutral-mid);
+  font-style: italic;
+}
+
+.date-picker-field input[readonly]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.input-field--read-only .field-description,
+.date-picker-field--read-only .field-description {
+  font-style: italic;
+}
+
+/* Button group with a label above it (Figma: Form/Inputs/Button group). A <label> can't name a group,
+   so point the group at the label with aria-labelledby:
+   <div class="button-group-field">
+     <span class="button-group-field__label" id="period-label">Category</span>
+     <div class="button-group" role="group" aria-labelledby="period-label">...</div>
+   </div> */
+.button-group-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
 }
 
 /* File field: label above a native file input with a green button. */
@@ -84,7 +149,7 @@
 .file-field input[type='file'] {
   font-family: var(--font-body);
   font-size: var(--font-size-data);
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .file-field input[type='file']::file-selector-button {

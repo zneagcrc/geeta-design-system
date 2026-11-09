@@ -18,19 +18,50 @@ export declare const tokens: {
     "blueDark": string
   },
   "neutral": {
+    "neutralDark": string,
+    "neutralMid": string,
+    "neutralMidLight": string,
+    "neutralLight": string,
+    "hoverTint": string,
     "textStrong": string,
     "textMuted": string,
     "borderField": string,
     "borderRule": string,
+    "surfaceWhite": string
+  },
+  "semantic": {
+    "brandDeep": string,
+    "brandHighlight": string,
+    "brandSunlit": string,
+    "brandGlow": string,
+    "actionSelected": string,
+    "textPrimary": string,
+    "textSecondary": string,
+    "borderSection": string,
     "borderDivider": string,
-    "surfaceWhite": string,
-    "hoverTint": string
+    "surfacePanel": string,
+    "surfaceField": string,
+    "statusError": string,
+    "statusErrorSurface": string,
+    "statusAttentionBorder": string,
+    "statusAttentionSurface": string,
+    "statusSuccessBorder": string,
+    "statusSuccessSurface": string,
+    "statusInfoBorder": string,
+    "statusInfoSurface": string,
+    "statusInfoText": string
   },
   "font": {
     "display": string,
     "body": string
   },
   "fontSize": {
+    "heading1": string,
+    "heading2": string,
+    "heading3": string,
+    "heading4": string,
+    "heading5": string,
+    "paragraph": string,
     "brand": string,
     "panelTitle": string,
     "section": string,
@@ -50,7 +81,8 @@ export declare const tokens: {
   "radius": {
     "small": string,
     "field": string,
-    "panel": string
+    "panel": string,
+    "pill": string
   },
   "shadow": {
     "panel": string

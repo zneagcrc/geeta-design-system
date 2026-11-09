@@ -10,25 +10,25 @@
       body { background: #f8f8f6; }
       .ref { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
       .ref h1 { margin: 32px 0 8px; font-family: var(--font-display); font-weight: 400; font-size: 36px; color: var(--harvest-green); }
-      .ref > h2 { margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-rule); font-family: var(--font-display); font-weight: 400; font-size: 24px; color: var(--harvest-green); }
-      .card > h3, .grid > div > h3 { margin: 0 0 12px; font-size: 14px; color: var(--text-strong); }
-      .ref p.lead { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 20px; max-width: 720px; }
+      .ref > h2 { margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-section); font-family: var(--font-display); font-weight: 400; font-size: 24px; color: var(--harvest-green); }
+      .card > h3, .grid > div > h3 { margin: 0 0 12px; font-size: 14px; color: var(--text-primary); }
+      .ref p.lead { margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 20px; max-width: 720px; }
       .ref code { font-size: 12px; color: var(--paddock-green); }
       .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
       .card { padding: 20px; background: #fff; border: 1px solid var(--border-divider); border-radius: 4px; }
-      .card .note { margin: 12px 0 0; font-size: 12px; line-height: 16px; color: var(--text-muted); }
+      .card .note { margin: 12px 0 0; font-size: 12px; line-height: 16px; color: var(--text-secondary); }
       .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
       .swatch__chip { height: 56px; border: 1px solid var(--border-divider); border-radius: 4px; }
       .swatch__name { margin-top: 8px; font-size: 13px; font-weight: 700; }
-      .swatch__meta { font-size: 12px; color: var(--text-muted); }
+      .swatch__meta { font-size: 12px; color: var(--text-secondary); }
       .type-row { display: flex; align-items: baseline; gap: 24px; padding: 12px 0; border-bottom: 1px solid var(--border-divider); }
-      .type-row__meta { width: 200px; flex-shrink: 0; font-size: 12px; color: var(--text-muted); }
+      .type-row__meta { width: 200px; flex-shrink: 0; font-size: 12px; color: var(--text-secondary); }
       .scale { display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
-      .scale__item { font-size: 12px; color: var(--text-muted); text-align: center; }
+      .scale__item { font-size: 12px; color: var(--text-secondary); text-align: center; }
       .scale__box { background: var(--paddock-green); margin: 0 auto 6px; }
       .radius-box { width: 96px; height: 48px; border: 1px solid var(--paddock-green); background: var(--fleece-white); margin-bottom: 6px; }
       .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
-      .icon-cell { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #fff; border: 1px solid var(--border-divider); border-radius: 4px; font-size: 12px; color: var(--text-muted); }
+      .icon-cell { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #fff; border: 1px solid var(--border-divider); border-radius: 4px; font-size: 12px; color: var(--text-secondary); }
       .stack { display: flex; flex-direction: column; gap: 12px; }
       .stack .panel-message { margin: 0; }
       .panel-demo { width: 360px; max-width: 100%; }
@@ -53,15 +53,31 @@
       <h2>Colours</h2>
       <div class="swatches" id="swatches"></div>
 
+      <h2>Neutrals</h2>
+      <div class="swatches" id="swatches-neutral"></div>
+
+      <h2>Semantic colours</h2>
+      <p class="lead">Figma's "Semantic colours" collection. Most are aliases of the colours above; in CSS they're <code>var()</code> references, so overriding a colour changes its aliases too.</p>
+      <div class="swatches" id="swatches-semantic" style="margin-top:16px"></div>
+
       <h2>Typography</h2>
       <div class="card">
+        <div class="type-row"><span class="type-row__meta">Heading 1 · JUST Sans 36/44 <code>.heading-1</code></span><p class="heading-1">FullCAM calculator for geeta</p></div>
+        <div class="type-row"><span class="type-row__meta">Heading 2 · JUST Sans 24/44 <code>.heading-2</code></span><p class="heading-2">Location data</p></div>
+        <div class="type-row"><span class="type-row__meta">Heading 3 · JUST Sans 20/44 <code>.heading-3</code></span><p class="heading-3">Climate data</p></div>
+        <div class="type-row"><span class="type-row__meta">Heading 4 · Arial bold 16/44 <code>.heading-4</code></span><p class="heading-4">5 year averages</p></div>
+        <div class="type-row"><span class="type-row__meta">Heading 5 · Arial bold 14 <code>.heading-5</code></span><p class="heading-5">Total rainfall: 511.5 mm</p></div>
+        <div class="type-row"><span class="type-row__meta">Paragraph · Arial 14 <code>.paragraph</code></span><p class="paragraph">Only visible when fully zoomed out</p></div>
+      </div>
+      <p class="lead" style="margin-top:16px">Component text roles:</p>
+      <div class="card" style="margin-top:8px">
         <div class="type-row"><span class="type-row__meta">Brand heading · JUST Sans 24</span><span class="brand__name"><strong>pin</strong>point for geeta</span></div>
         <div class="type-row"><span class="type-row__meta">Panel title · JUST Sans 22</span><h2 class="panel__title">Location data</h2></div>
         <div class="type-row"><span class="type-row__meta">Section heading · JUST Sans 16</span><span style="font-family:var(--font-display);font-size:var(--font-size-section)">Climate data</span></div>
         <div class="type-row"><span class="type-row__meta">Control label · JUST Sans 14</span><span style="font-family:var(--font-display);font-size:var(--font-size-control)">5 year averages</span></div>
         <div class="type-row"><span class="type-row__meta">Data label / value · Arial 14</span><span style="font-size:var(--font-size-data)"><b>Total rainfall</b>&nbsp; 511.5 mm</span></div>
         <div class="type-row"><span class="type-row__meta">Supporting text · Arial 12</span><span style="font-size:var(--font-size-small)">Only visible at map zoom level 5 or less</span></div>
-        <div class="type-row"><span class="type-row__meta">Small print · Arial 11</span><span style="font-size:var(--font-size-fine);color:var(--text-muted)">Data sources: climate data from SILO (Queensland Government).</span></div>
+        <div class="type-row"><span class="type-row__meta">Small print · Arial 11</span><span style="font-size:var(--font-size-fine);color:var(--text-secondary)">Data sources: climate data from SILO (Queensland Government).</span></div>
       </div>
 
       <h2>Spacing and corner radii</h2>
@@ -89,6 +105,32 @@
         </div>
       </div>
 
+      <h2>Buttons</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Button <code>.button</code></h3>
+          <div class="stack" style="align-items:flex-start">
+            <button type="button" class="button"><img src="../dist/icons/delete-white.svg" alt="" />Primary action</button>
+            <button type="button" class="button button--secondary"><img src="../dist/icons/delete-green.svg" alt="" />Secondary action</button>
+            <button type="button" class="button button--delete"><img src="../dist/icons/delete-white.svg" alt="" />Delete</button>
+          </div>
+          <p class="note">Default, <code>--secondary</code> and <code>--delete</code>. The icon is optional; use the <code>-white</code> icon on filled buttons and <code>-green</code> on secondary.</p>
+        </div>
+        <div class="card">
+          <h3>Icon Button <code>.icon-button</code></h3>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="icon-button" aria-label="Edit"><img src="../dist/icons/edit.svg" alt="" /></button>
+            <button type="button" class="icon-button icon-button--delete" aria-label="Delete"><img src="../dist/icons/delete-red.svg" alt="" /></button>
+          </div>
+          <p class="note">32 × 32. <code>--delete</code> is Figma's "Variant2". Always give it an <code>aria-label</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Button small <code>.button-small</code></h3>
+          <button type="button" class="button-small">Add thing<img src="../dist/icons/add-green.svg" alt="" /></button>
+          <p class="note">A pill for compact inline actions, such as the add button in an object list header.</p>
+        </div>
+      </div>
+
       <h2>Controls</h2>
       <div class="grid">
         <div class="card">
@@ -98,6 +140,16 @@
             <button type="button" aria-pressed="false">Single year</button>
           </div>
           <p class="note">Mark the chosen button with <code>.is-selected</code> and <code>aria-pressed="true"</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Button group with label <code>.button-group-field</code></h3>
+          <div class="button-group-field">
+            <span class="button-group-field__label" id="ref-category-label">Category</span>
+            <div class="button-group" role="group" aria-labelledby="ref-category-label">
+              <button type="button" aria-pressed="false">5 year averages</button>
+              <button type="button" class="is-selected" aria-pressed="true">Single year</button>
+            </div>
+          </div>
         </div>
         <div class="card">
           <h3>Select box <code>.select-box</code></h3>
@@ -117,15 +169,44 @@
           <h3>Input field <code>.input-field</code></h3>
           <div class="input-field">
             <label for="ref-input">Label</label>
-            <input id="ref-input" type="text" placeholder="Enter text" />
+            <input id="ref-input" type="text" placeholder="Enter text" aria-describedby="ref-input-desc" />
+            <p class="field-description" id="ref-input-desc">Description</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Input field, error <code>.input-field--error</code></h3>
+          <div class="input-field input-field--error">
+            <label for="ref-input-error">Label</label>
+            <input id="ref-input-error" type="text" placeholder="Enter text" aria-invalid="true" aria-describedby="ref-input-error-desc ref-input-error-msg" />
+            <p class="field-description" id="ref-input-error-desc">Description</p>
+            <p class="field-error" id="ref-input-error-msg">Error text</p>
           </div>
         </div>
         <div class="card">
           <h3>Date picker field <code>.date-picker-field</code></h3>
           <div class="date-picker-field">
             <label for="ref-date">Date</label>
-            <input id="ref-date" type="date" />
+            <input id="ref-date" type="date" aria-describedby="ref-date-desc" />
+            <p class="field-description" id="ref-date-desc">Description</p>
           </div>
+        </div>
+        <div class="card">
+          <h3>Date picker field, error <code>.date-picker-field--error</code></h3>
+          <div class="date-picker-field date-picker-field--error">
+            <label for="ref-date-error">Date</label>
+            <input id="ref-date-error" type="date" aria-invalid="true" aria-describedby="ref-date-error-desc ref-date-error-msg" />
+            <p class="field-description" id="ref-date-error-desc">Description</p>
+            <p class="field-error" id="ref-date-error-msg">Error text</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Date picker field, read only <code>.date-picker-field--read-only</code></h3>
+          <div class="date-picker-field date-picker-field--read-only">
+            <label for="ref-date-ro">Date</label>
+            <input id="ref-date-ro" type="date" value="2024-07-01" readonly aria-describedby="ref-date-ro-desc" />
+            <p class="field-description" id="ref-date-ro-desc">Description</p>
+          </div>
+          <p class="note">Add <code>readonly</code> to the input.</p>
         </div>
         <div class="card">
           <h3>File field <code>.file-field</code></h3>
@@ -201,6 +282,52 @@
         </div>
       </div>
 
+      <h2>Object list <code>.object-list</code></h2>
+      <div class="grid">
+        <div>
+          <h3>In a panel, with layout helpers</h3>
+          <section class="panel panel-demo">
+            <div class="panel__header"><h2 class="panel__title">Activities</h2></div>
+            <div class="panel__body">
+              <div class="container-content">
+                <div class="object-list">
+                  <div class="object-list__header">
+                    <h4 class="object-list__title">2 plantings</h4>
+                    <button type="button" class="button-small">Add planting<img src="../dist/icons/add-green.svg" alt="" /></button>
+                  </div>
+                  <ul class="object-list__items">
+                    <li class="object-list__item">
+                      <span class="object-list__label">Back paddock eucalypt 2</span>
+                      <span class="object-list__actions">
+                        <span class="object-list__value">123 ha</span>
+                        <button type="button" class="icon-button" aria-label="Edit Back paddock eucalypt 2"><img src="../dist/icons/edit.svg" alt="" /></button>
+                        <button type="button" class="icon-button icon-button--delete" aria-label="Delete Back paddock eucalypt 2"><img src="../dist/icons/delete-red.svg" alt="" /></button>
+                      </span>
+                    </li>
+                    <li class="object-list__item">
+                      <span class="object-list__label">Creek line revegetation</span>
+                      <span class="object-list__actions">
+                        <span class="object-list__value">48 ha</span>
+                        <button type="button" class="icon-button" aria-label="Edit Creek line revegetation"><img src="../dist/icons/edit.svg" alt="" /></button>
+                        <button type="button" class="icon-button icon-button--delete" aria-label="Delete Creek line revegetation"><img src="../dist/icons/delete-red.svg" alt="" /></button>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="spacer-1em"></div>
+                <div class="object-list">
+                  <div class="object-list__header">
+                    <h4 class="object-list__title">0 wildfires</h4>
+                    <button type="button" class="button-small">Add wildfire<img src="../dist/icons/add-green.svg" alt="" /></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <p class="note" style="font-size:12px;color:var(--text-secondary)"><code>.container-content</code> (Containers/Content) adds the 16px side and 32px bottom insets; <code>.spacer-1em</code> (Spacers/1em) is a 16px gap.</p>
+        </div>
+      </div>
+
       <h2>Icons <code>dist/icons/</code></h2>
       <div class="icons" id="icons"></div>
     </main>
@@ -209,19 +336,27 @@
       import tokens from '../dist/tokens.js';
 
       // Colour swatches straight from the tokens, so this page can't drift from them.
-      const swatches = document.getElementById('swatches');
-      const names = { ...tokens.color, ...tokens.neutral };
-      for (const [name, value] of Object.entries(names)) {
-        const label = name.replace(/[A-Z]/g, (c) => ' ' + c.toLowerCase());
-        const cssName = '--' + name.replace(/[A-Z]/g, (c) => '-' + c.toLowerCase());
-        swatches.insertAdjacentHTML('beforeend',
-          `<div><div class="swatch__chip" style="background:${value}"></div>` +
-          `<div class="swatch__name">${label[0].toUpperCase() + label.slice(1)}</div>` +
-          `<div class="swatch__meta">${value} · <code>${cssName}</code></div></div>`);
+      // Deprecated neutral aliases are left out.
+      const deprecated = ['textStrong', 'textMuted', 'borderField', 'borderRule', 'surfaceWhite'];
+      function showSwatches(id, group) {
+        const container = document.getElementById(id);
+        for (const [name, value] of Object.entries(group)) {
+          if (deprecated.includes(name)) continue;
+          const label = name.replace(/[A-Z]/g, (c) => ' ' + c.toLowerCase());
+          const cssName = '--' + name.replace(/[A-Z]/g, (c) => '-' + c.toLowerCase());
+          container.insertAdjacentHTML('beforeend',
+            `<div><div class="swatch__chip" style="background:var(${cssName})"></div>` +
+            `<div class="swatch__name">${label[0].toUpperCase() + label.slice(1)}</div>` +
+            `<div class="swatch__meta">${value} · <code>${cssName}</code></div></div>`);
+        }
       }
+      showSwatches('swatches', tokens.color);
+      showSwatches('swatches-neutral', tokens.neutral);
+      showSwatches('swatches-semantic', tokens.semantic);
 
       const icons = ['info', 'spinner', 'alert-warning', 'alert-error', 'success', 'visibility-on',
-        'visibility-off', 'chevron-up', 'chevron-down', 'chevron-down-green', 'close', 'upload', 'calendar'];
+        'visibility-off', 'chevron-up', 'chevron-down', 'chevron-down-green', 'close', 'upload', 'calendar',
+        'edit', 'add', 'add-green', 'delete', 'delete-red', 'delete-green', 'delete-white'];
       document.getElementById('icons').innerHTML = icons
         .map((name) => `<div class="icon-cell"><img src="../dist/icons/${name}.svg" width="16" height="16" alt="" />${name}.svg</div>`)
         .join('');

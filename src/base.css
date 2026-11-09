@@ -8,6 +8,6 @@
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: var(--text-strong);
-  background: var(--surface-white);
+  color: var(--text-primary);
+  background: var(--surface-field);
 }

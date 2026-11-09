@@ -1,0 +1,14 @@
+/* Layout helpers (Figma: Containers/Content, Spacers/1em). */
+
+/* Containers/Content: panel content with 16px side insets and the 32px panel base inset below. */
+.container-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--space-16) var(--space-32);
+}
+
+/* Spacers/1em: a 16px gap between sections. */
+.spacer-1em {
+  height: var(--space-16);
+  flex-shrink: 0;
+}

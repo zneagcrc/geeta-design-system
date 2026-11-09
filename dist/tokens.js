@@ -18,19 +18,50 @@ export const tokens = {
     "blueDark": "#21398b"
   },
   "neutral": {
+    "neutralDark": "#333333",
+    "neutralMid": "#666666",
+    "neutralMidLight": "#999999",
+    "neutralLight": "#dddddd",
+    "hoverTint": "#e6e9e5",
     "textStrong": "#333333",
     "textMuted": "#666666",
     "borderField": "#666666",
     "borderRule": "#999999",
+    "surfaceWhite": "#ffffff"
+  },
+  "semantic": {
+    "brandDeep": "#164030",
+    "brandHighlight": "#87c05e",
+    "brandSunlit": "#fbb925",
+    "brandGlow": "#fbd476",
+    "actionSelected": "#0c5c3e",
+    "textPrimary": "#333333",
+    "textSecondary": "#666666",
+    "borderSection": "#999999",
     "borderDivider": "#cccccc",
-    "surfaceWhite": "#ffffff",
-    "hoverTint": "#e6e9e5"
+    "surfacePanel": "#f3f3f2",
+    "surfaceField": "#ffffff",
+    "statusError": "#a33019",
+    "statusErrorSurface": "#fbeae7",
+    "statusAttentionBorder": "#e07c29",
+    "statusAttentionSurface": "#fcf0d1",
+    "statusSuccessBorder": "#058c48",
+    "statusSuccessSurface": "#e6f8d8",
+    "statusInfoBorder": "#4861b2",
+    "statusInfoSurface": "#d9ddf4",
+    "statusInfoText": "#21398b"
   },
   "font": {
     "display": "'JUST Sans', Arial, sans-serif",
     "body": "Arial, Helvetica, sans-serif"
   },
   "fontSize": {
+    "heading1": "36px",
+    "heading2": "24px",
+    "heading3": "20px",
+    "heading4": "16px",
+    "heading5": "14px",
+    "paragraph": "14px",
     "brand": "24px",
     "panelTitle": "22px",
     "section": "16px",
@@ -50,7 +81,8 @@ export const tokens = {
   "radius": {
     "small": "4px",
     "field": "6px",
-    "panel": "8px"
+    "panel": "8px",
+    "pill": "12px"
   },
   "shadow": {
     "panel": "0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.5)"

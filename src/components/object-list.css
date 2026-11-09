@@ -1,0 +1,77 @@
+/* Object list (Figma: Object list, Object list header, Object list item, Object list item actions).
+   A list of things the user has added, each with a value and edit and delete buttons (edit first).
+   <div class="object-list">
+     <div class="object-list__header">
+       <h4 class="object-list__title">2 plantings</h4>
+       <button type="button" class="button-small">Add planting<img src=".../icons/add-green.svg" alt=""></button>
+     </div>
+     <ul class="object-list__items">
+       <li class="object-list__item">
+         <span class="object-list__label">Back paddock eucalypt 2</span>
+         <span class="object-list__actions">
+           <span class="object-list__value">123 ha</span>
+           <button type="button" class="icon-button" aria-label="Edit Back paddock eucalypt 2"><img src=".../icons/edit.svg" alt=""></button>
+           <button type="button" class="icon-button icon-button--delete" aria-label="Delete Back paddock eucalypt 2"><img src=".../icons/delete-red.svg" alt=""></button>
+         </span>
+       </li>
+     </ul>
+   </div> */
+.object-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.object-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  min-height: 36px;
+  padding-bottom: var(--space-8);
+  border-bottom: 2px solid var(--neutral-mid);
+}
+
+.object-list__title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-heading-5);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--neutral-dark);
+}
+
+.object-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.object-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--neutral-mid-light);
+}
+
+.object-list__label {
+  min-width: 0;
+  font-size: var(--font-size-paragraph);
+  line-height: normal;
+  color: var(--neutral-dark);
+}
+
+.object-list__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-shrink: 0;
+}
+
+.object-list__value {
+  font-size: var(--font-size-paragraph);
+  line-height: normal;
+  color: var(--neutral-mid);
+  white-space: nowrap;
+}

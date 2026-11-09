@@ -1,0 +1,53 @@
+/* Text styles (Figma: Heading 1-5 and Paragraph). Classes, not element styles, so a tool's own
+   h1-h5 and p keep working until it opts in: <h2 class="heading-2">Location data</h2>. */
+.heading-1,
+.heading-2,
+.heading-3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0;
+  color: var(--text-primary);
+}
+
+.heading-1 {
+  font-size: var(--font-size-heading-1);
+}
+
+.heading-2 {
+  font-size: var(--font-size-heading-2);
+}
+
+.heading-3 {
+  font-size: var(--font-size-heading-3);
+}
+
+.heading-4,
+.heading-5 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--text-primary);
+}
+
+.heading-4 {
+  font-size: var(--font-size-heading-4);
+  line-height: 44px;
+}
+
+.heading-5 {
+  font-size: var(--font-size-heading-5);
+  line-height: normal;
+}
+
+.paragraph {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-paragraph);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+  color: var(--text-primary);
+}

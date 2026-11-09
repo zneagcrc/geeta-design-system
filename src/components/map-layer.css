@@ -23,7 +23,7 @@
 }
 
 .map-layer[aria-pressed='false'] .map-layer__name {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .map-layer__text {
@@ -36,10 +36,10 @@
   font-size: var(--font-size-data);
   font-weight: 700;
   line-height: 14px;
-  color: var(--text-strong);
+  color: var(--text-primary);
 }
 
 .map-layer__description {
   font-size: var(--font-size-small);
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
