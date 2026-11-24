@@ -2,6 +2,10 @@
 
 Before 1.0, a new minor version (0.x.0) can rename or remove classes and tokens; a patch version (0.1.x) won't.
 
+## 0.2.1 (November 2026)
+
+- Icons: `download`, the `upload` icon with the arrow pointing down into the tray.
+
 ## 0.2.0 (November 2026)
 
 Matches the updated Figma file.
